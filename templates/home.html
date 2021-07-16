@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Home{% endblock title %} 
+{% block content %} 
+<h1 class="py-4 text-5xl text-center">Booky</h1>
+{% if user.is_authenticated %}
+
+<p class="text-3xl font-light">Hi {{user.username}}!</p>
+<a class="py-2 font-light text-blue-300" href="{% url 'logout' %}">Logout</a>
+{% else %}
+<p class="text-3xl font-light">You have not logged in or Registered</p>
+<div class="flex ">
+    <a class="py-2 mr-4 font-light text-blue-300" href="{% url 'login' %}">Login</a>
+    <a class="py-2 font-light text-blue-300" href="{% url 'signup' %}">Register</a>
+</div>
+{% endif %}
+
+{% endblock %}
