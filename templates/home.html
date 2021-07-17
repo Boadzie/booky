@@ -2,17 +2,20 @@
 {% load static %}
 {% block title %}Home{% endblock title %} 
 {% block content %} 
-<h1 class="py-4 text-5xl text-center">Booky</h1>
-{% if user.is_authenticated %}
-
-<p class="text-3xl font-light">Hi {{user.username}}!</p>
-<a class="py-2 font-light text-blue-300" href="{% url 'logout' %}">Logout</a>
-{% else %}
-<p class="text-3xl font-light">You have not logged in or Registered</p>
-<div class="flex ">
-    <a class="py-2 mr-4 font-light text-blue-300" href="{% url 'login' %}">Login</a>
-    <a class="py-2 font-light text-blue-300" href="{% url 'signup' %}">Register</a>
+<div class="flex items-center justify-center py-0">
+  <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+     <div class="flex flex-col justify-center">
+         <h2 class="py-2 text-4xl font-light">Booky</h2>
+         <p class="w-5/6 text-lg font-thin">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel architecto, dolor sunt nisi fugiat in? Cumque saepe obcaecati excepturi optio, ipsum dolorum quibusdam quo cum error magni reiciendis esse nemo!</p>
+         <div class="flex py-3 space-x-4">
+             <a href="#" class="block px-3 py-2 text-sm font-semibold text-center text-white transition-colors duration-200 transform bg-gray-900 rounded-md hover:bg-gray-700">Learn More</a>
+             <a href="#" class="block px-3 py-2 text-sm font-semibold text-center text-gray-700 transition-colors duration-200 transform bg-gray-200 rounded-md lg:mx-4 hover:bg-gray-300">Blog</a>
+         </div>
+        </div>
+     <div>
+        <img class="object-cover object-center overflow-hidden rounded-lg " src="https://cdn.pixabay.com/photo/2016/11/29/02/56/blonde-1866951_1280.jpg" alt="">
+     </div>
+  </div>
 </div>
-{% endif %}
 
 {% endblock %}

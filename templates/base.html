@@ -9,10 +9,12 @@
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    
     <title>Booky</title>
   </head>
   <body>
+    {% include '_nav.html' %}
     <main class="container px-3 py-6 mx-auto">
       {% block content %}{% endblock %}
     </main>
