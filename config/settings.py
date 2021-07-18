@@ -54,6 +54,7 @@ ACCOUNT_UNIQUE_EMAIL = True  # new
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTH_USER_MODEL = 'accounts.CustomUser'
+DEFAULT_FROM_EMAIL = 'admin@booky.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
