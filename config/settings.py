@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'allauth',
     'allauth.account',
+    'books'
 ]
 
 LOGIN_REDIRECT_URL = 'home'

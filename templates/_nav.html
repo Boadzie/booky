@@ -18,7 +18,7 @@
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <div class="items-center md:flex">
             <div class="flex flex-col md:flex-row md:mx-6">
-                <a class="my-1 text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="/">Books</a>
+                <a class="my-1 text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="{% url 'books' %}">Books</a>
                 <a class="my-1 text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0" href="{% url 'about' %}">About</a>
                 {% if user.is_authenticated %}
                 <p class="text-lg text-blue-400">Hi {{ user.username| capfirst }}!</p>

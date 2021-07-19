@@ -11,4 +11,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     # pages views
     path('', include('pages.urls')),
+    path('books/', include('books.urls')),
 ]
