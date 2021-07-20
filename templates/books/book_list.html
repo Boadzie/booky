@@ -1,16 +1,27 @@
 {% extends "base.html" %} {% load static %} 
 {% block title %}Home{% endblock title %} 
 {% block content %}
-
-<div class="flex flex-col w-1/2 ml-auto mr-auto space-y-4">
+<h1 class="py-4 text-4xl text-center">Books</h1>
+<div class="grid w-5/6 grid-cols-1 gap-4 ml-auto mr-auto lg:grid-cols-3 py-14">
    {% for book in books %}
-     <div class="px-3 py-3 bg-gray-100 rounded-lg">
-         <h2 class="py-2 text-4xl font-light"><a class="text-blue-500" href="{{ book.get_absolute_url }}">{{book.title}}</a></h2>
-         <!-- <p class="py-2 text-sm font-thin">{{book.author}}</p> -->
+     <div class="flex flex-col py-3 text-white bg-gray-800 ">
+         <h2 class="px-3 py-4 text-4xl font-light"><a class="text-gray-100" href="{{ book.get_absolute_url }}">{{book.title}}</a></h2>
+        {% if book.cover %}
+        <img class="object-cover object-center w-full overflow-hidden h-80" src="{{book.cover.url}}" alt="{{book.title}}"/>
+        {% endif %}
          <div class="flex space-x-3">
           <p class="inline-flex items-center justify-center px-2 py-1 text-light">{{book.author}}</p>
           <p class="py-2 text-lg font-bold">${{book.price}}</p>
-      </div>
+        </div>
+        <div class="flex py-4 ">
+          <!-- <h2 class="inline-flex items-center justify-center px-2 py-1 text-light">Reviews</h2> -->
+          <ul class="flex flex-col w-full">
+            {% for review in book.reviews.all %}
+            <li class="px-2 py-2 italic text-blue-500 bg-white ">{{ review.review }} ({{ review.author }})</li>
+            <hr>
+            {% endfor %}
+            </ul>
+        </div>
      </div>
    {% endfor %}
 </div>
