@@ -7,8 +7,14 @@ from .models import Book
 
 class BookListView(LoginRequiredMixin, ListView):
     model = Book
-    context_object_name = 'books'
+    # context_object_name = 'books'
     template_name = "books/book_list.html"
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        context['books'] = Book.objects.all().order_by("title")
+        return context
 
 
 class BookDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
