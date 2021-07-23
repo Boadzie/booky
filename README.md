@@ -1,5 +1,7 @@
 # Booky
 
+![Booky Demo](Booky.gif)
+
 Book shop with Authentication and Search using Django and Tailwindcss
 
 ## To run it
